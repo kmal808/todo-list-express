@@ -23,7 +23,7 @@
 		<!--! </head>  -->
 		<body>
 			<!--! dupe -- already used above -->
-			<h1>Todo List:</h1>
+			<h1>Grocery List:</h1>
 			<!--! heading 1 (muy importante)-->
 			<ul class="todoItems">
 				<!--! unordered list with a class of todoItems-->
@@ -50,15 +50,19 @@
 			</ul>
 			<!--! closing the unordered list-->
 
-			<h2>Left to do: <%= left %></h2>
+			<h2>Left to buy: <%= left %></h2>
 			<!--! heading 2 (pretty importante) which renders the html string "Left to do:". Next to that string is ejs that shows a numerical value representing the number of items left to do -->
 
-			<h2>Add A Todo:</h2>
+			<h2>Add an item:</h2>
 			<!--! heading 2 (pretty importante) which renders the html string "Add A Todo"-->
 
 			<form action="/addTodo" method="POST">
 				<!--! opening form tag with an action that is a route to "/addTodo" and a method of post which sends a request-->
-				<input type="text" placeholder="Thing To Do" name="todoItem" />
+				<input
+					type="text"
+					placeholder="Name of grocery to buy"
+					name="todoItem"
+				/>
 				<!--! input of the form where the user enters text, renders with placeholder text of "Thing To Do"-->
 				<input type="submit" />
 				<!--! shows a submit button which when pressed will hit the route in the opening form tag -->
