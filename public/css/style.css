@@ -1,6 +1,6 @@
 body {
 	/*! selects the body tag to apply the styling within the curly brackets */
-	text-align: center; /*! aligns the text in the center of box */
+	/* text-align: center; ! aligns the text in the center of box */
 	width: 25%; /*! sets the body to a width of 25% of the overall html width */
 	height: auto; /*! sets the height of the body to auto, so browser decides what height is best */
 	display: block; /*! sets the display of the body to be a block level element vs inline or inline-block*/

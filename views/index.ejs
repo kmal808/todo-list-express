@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Shopping List</title>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -21,57 +21,53 @@
 		<!-- !<meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
 		<!-- !<title>Todo or Not Todo</title> -->
 		<!--! </head>  -->
-		<body>
-			<!--! dupe -- already used above -->
-			<h1>Grocery List:</h1>
-			<!--! heading 1 (muy importante)-->
-			<ul class="todoItems">
-				<!--! unordered list with a class of todoItems-->
-				<% for(let i=0; i < items.length; i++) {%>
-				<!--! Via EJS (which allows us to write js in html)we gon loop the beat (loops the items array)-->
-				<li class="item">
-					<!--! list with a class of item -->
-					<% if(items[i].completed === true) {%>
-					<!--! conditional statement based on an itmes truthyness-->
-					<span class="completed"><%= items[i].thing %></span>
-					<!--! span with a class of completed followed by the result of items completed being true-->
-					<% }else{ %>
-					<!--! if completed items is false, do what's next-->
-					<span><%= items[i].thing %></span>
-					<!--! the result of items completed being false -->
-					<% } %>
-					<!--! closing the else-->
-					<span class="fa fa-trash"></span>
-					<!--! span with a class of fa fa-trash which is font awesome trashcan icon-->
-				</li>
-				<!--! closing the list-->
+		<!-- <body> -->
+		<!--! dupe -- already used above -->
+		<h1>Shopping List:</h1>
+		<!--! heading 1 (muy importante)-->
+		<ul class="todoItems">
+			<!--! unordered list with a class of todoItems-->
+			<% for(let i=0; i < items.length; i++) {%>
+			<!--! Via EJS (which allows us to write js in html)we gon loop the beat (loops the items array)-->
+			<li class="item">
+				<!--! list with a class of item -->
+				<% if(items[i].completed === true) {%>
+				<!--! conditional statement based on an itmes truthyness-->
+				<span class="completed"><%= items[i].thing %></span>
+				<!--! span with a class of completed followed by the result of items completed being true-->
+				<% }else{ %>
+				<!--! if completed items is false, do what's next-->
+				<span><%= items[i].thing %></span>
+				<!--! the result of items completed being false -->
 				<% } %>
-				<!--! closing the conditional-->
-			</ul>
-			<!--! closing the unordered list-->
+				<!--! closing the else-->
+				<span class="fa fa-trash"></span>
+				<!--! span with a class of fa fa-trash which is font awesome trashcan icon-->
+			</li>
+			<!--! closing the list-->
+			<% } %>
+			<!--! closing the conditional-->
+		</ul>
+		<!--! closing the unordered list-->
 
-			<h2>Left to buy: <%= left %></h2>
-			<!--! heading 2 (pretty importante) which renders the html string "Left to do:". Next to that string is ejs that shows a numerical value representing the number of items left to do -->
+		<h2>Left to get: <%= left %></h2>
+		<!--! heading 2 (pretty importante) which renders the html string "Left to do:". Next to that string is ejs that shows a numerical value representing the number of items left to do -->
 
-			<h2>Add an item:</h2>
-			<!--! heading 2 (pretty importante) which renders the html string "Add A Todo"-->
+		<h2>Add item to list:</h2>
+		<!--! heading 2 (pretty importante) which renders the html string "Add A Todo"-->
 
-			<form action="/addTodo" method="POST">
-				<!--! opening form tag with an action that is a route to "/addTodo" and a method of post which sends a request-->
-				<input
-					type="text"
-					placeholder="Name of grocery to buy"
-					name="todoItem"
-				/>
-				<!--! input of the form where the user enters text, renders with placeholder text of "Thing To Do"-->
-				<input type="submit" />
-				<!--! shows a submit button which when pressed will hit the route in the opening form tag -->
-			</form>
-			<!--! closes the form -->
+		<form action="/addTodo" method="POST">
+			<!--! opening form tag with an action that is a route to "/addTodo" and a method of post which sends a request-->
+			<input type="text" placeholder="Name of grocery to buy" name="todoItem" />
+			<!--! input of the form where the user enters text, renders with placeholder text of "Thing To Do"-->
+			<input type="submit" />
+			<!--! shows a submit button which when pressed will hit the route in the opening form tag -->
+		</form>
+		<!--! closes the form -->
 
-			<script src="js/main.js"></script>
-			<!--! tells ejs there's a script in the file main.js which is in the js folder-->
-		</body>
+		<script src="js/main.js"></script>
+		<!--! tells ejs there's a script in the file main.js which is in the js folder-->
+		<!-- </body> -->
 		<!--! closing of the out of place/does not belong body tag -->
 		<!--! </html> closing of the dupe uneeded out of place tag -->
 	</body>

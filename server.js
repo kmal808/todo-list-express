@@ -6,7 +6,7 @@ require('dotenv').config() //! imports dotenv to use env variables
 
 //* database variables
 let db, //! variable declaration
-	dbConnectionStr = process.env.DB_STRING, //! creates a variable wiht the value of our mongo connection url seceret
+	dbConnectionStr = process.env.DB_STRING, //! creates a variable with the value of our mongo connection url seceret
 	dbName = 'todo' //! creates a variable with the value of the database name from mongo
 
 //* connecting to the db
